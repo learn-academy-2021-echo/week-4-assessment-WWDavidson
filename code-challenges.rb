@@ -53,6 +53,9 @@ is_palindrome3 = 'Rotator'
 #                 "#{string} is not a palindrome."
 #     end
 # end
+
+# wanted to try to use the "unless"
+
 def p_check string
     unless string.downcase != string.downcase.reverse
         "#{string} is a palindrome."
