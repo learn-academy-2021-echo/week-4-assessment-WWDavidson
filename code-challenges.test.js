@@ -87,7 +87,7 @@ describe("minMax", () => {
 //the function will need to iterate over an array
 //I will use a filter method to iterate
 //I will create an empty array to store the numbers
-//using math.min, and math.max, I can put the numbers in the specified order 
+//using math.min, and math.max, I can find the smallest and largest numbers and put them in the specified order 
 //I will then return the new array
 
 const minMax = (array) => {
@@ -103,10 +103,33 @@ const minMax = (array) => {
 
 // a) Create a test with an expect statement using the variables provided.
 
+
+
+
 var testArray1 = [3, 7, 10, 5, 4, 3, 3]
 var testArray2 = [7, 8, 2, 3, 1, 5, 4]
 // Expected output: [3, 7, 10, 5, 4, 8, 2, 1]
 
+//I will name my function "cull"
+
+describe("cull", () => {
+    it("will take in two arrays, combine them and return an array with no duplicate values",() => {
+        expect(cull(testArray1,testArray2)).toEqual([3, 7, 10, 5, 4, 8, 2, 1])
+    })
+})
 
 
 // b) Create the function that makes the test pass.
+
+//first I need to create a function that takes in two arrays
+//I will then concatenate the two arrays 
+//from there I will use a filter method to iterate over the concat'd array
+//I will then filter out duplicate values and return the new array
+
+const cull = (array1, array2) => {
+    let conCatD = [...array1, ...array2] 
+    let finArr = conCatD.filter((value,index) => {
+            return conCatD.indexOf(value) === index
+       })
+          return finArr
+  }
